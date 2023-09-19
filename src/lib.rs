@@ -194,7 +194,7 @@ impl Renderer {
         }
     }
 
-    pub fn render<'ui>(&self, ui: Ui<'ui>) {
+    pub fn render(&self, ui: Ui) {
         use imgui::{DrawCmd, DrawCmdParams, DrawIdx, DrawVert};
 
         let gl = &self.gl;
