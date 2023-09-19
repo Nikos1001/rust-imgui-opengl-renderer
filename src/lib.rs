@@ -234,8 +234,8 @@ impl Renderer {
             #[cfg(not(target_arch = "wasm32"))]
             gl.PolygonMode(gl::FRONT_AND_BACK, gl::FILL);
 
-            let [width, height] = ui.io().display_size;
-            let [scale_w, scale_h] = ui.io().display_framebuffer_scale;
+            let [width, height] = imgui.io().display_size;
+            let [scale_w, scale_h] = imgui.io().display_framebuffer_scale;
 
             let fb_width = width * scale_w;
             let fb_height = height * scale_h;
