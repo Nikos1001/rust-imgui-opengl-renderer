@@ -194,7 +194,7 @@ impl Renderer {
         }
     }
 
-    pub fn render(&self, ui: Ui) {
+    pub fn render(&self, ctx: Context) {
         use imgui::{DrawCmd, DrawCmdParams, DrawIdx, DrawVert};
 
         let gl = &self.gl;
@@ -294,7 +294,7 @@ impl Renderer {
                 field_offset::<DrawVert, _, _>(|v| &v.col) as _,
             );
 
-            let draw_data = ui.render();
+            let draw_data = ctx.render();
 
             for draw_list in draw_data.draw_lists() {
                 let vtx_buffer = draw_list.vtx_buffer();
